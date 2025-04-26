@@ -1,0 +1,23 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  quote?: string;
+}
+
+const {
+  title,
+  subtitle,
+  image = "/images/hero-bg.png",
+  quote = '"I used to sit on a bench out-side Wally\'s Burgers on Kingsway and watch those cars go by"',
+} = Astro.props;
+---
+
+<div class="relative w-full">
+  <img src={image} alt={title} class="w-full h-[700px] object-cover" />
+</div>
+
+<style>
+  /* Optional additional styles */
+</style>

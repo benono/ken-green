@@ -1,0 +1,98 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../components/Hero.astro";
+import BuiltCarHero from "../../../components/BuiltCarHero.astro";
+import Section from "../../../components/Section.astro";
+import HomeButton from "../../../components/HomeButton.astro";
+---
+
+<Layout
+  title="His History - Ken Green"
+  description="The life journey and accomplishments of Ken Green, spanning decades of car building and craftsmanship."
+>
+  <BuiltCarHero
+    title="His History"
+    image="/images/ken-roadster-show.png"
+    quote='"I used to sit on a bench out-side Wally&apos;s Burgers on Kingsway and watch those cars go by"'
+  />
+  <HomeButton />
+  <div class="px-4 py-12 bg-[#FFFBEA]">
+    <div class="container mx-auto px-4">
+      <!-- Personal Overview Section -->
+      <section class="mb-16">
+        <h2 class="text-center text-3xl font-serif text-green-800 mb-12 pl-3">
+          - His Work -
+        </h2>
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-1/2">
+            <img
+              src="/images/1931-ford.png"
+              alt="Ken Green Portrait"
+              class="rounded-lg shadow-md w-full"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Ken Green's 1931 Ford highboy roadster represents the pinnacle of
+              his hot rod building journey. Built entirely by Ken in his home
+              garage over 8 years, this vehicle showcases his exceptional skills
+              as both designer and craftsman. As a trained draftsman, Ken
+              personally designed, cast, and machined many unique features,
+              including custom air cleaners, steering wheel, hub caps, and a
+              Wally's Burger rear license plate frame—a nod to where his passion
+              for hot rods began. This home-built masterpiece earned a spot
+              among just 11 contenders in the prestigious America's Most
+              Beautiful Roadster competition at the Grand National Roadster
+              Show. Competing against professionally-built vehicles, Ken's
+              roadster impressed judges, earning runner-up status along with
+              "Most Outstanding Detail" and "AMBR Achievement Award" honors.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Build Log Section -->
+      <section class="mb-16">
+        <h2 class="text-center text-3xl font-serif text-green-800 mb-6 pl-3">
+          - Build Log -
+        </h2>
+        <div
+          class="bg-gray-100 border-2 border-dashed border-amber-500 rounded-lg p-8 text-center"
+        >
+          <div class="flex justify-center mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-16 w-16 text-amber-500 animate-pulse"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-bold text-amber-600 mb-2">
+            ENGINE REVVING...
+          </h3>
+          <p class="text-gray-700 mb-4">
+            Ken is still in the garage working on this section!
+          </p>
+          <div class="inline-block bg-amber-100 p-3 rounded-lg">
+            <p class="text-amber-800 font-mono text-sm">
+              STATUS: Under Construction<br />
+              ETA: When the carburetor stops making that funny noise
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  h2 {
+    position: relative;
+  }
+</style>
