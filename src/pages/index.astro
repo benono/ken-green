@@ -1,11 +1,113 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import "../styles/global.css";
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Section from "../components/Section.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Green Kitchen - Home"
+  description="Green Kitchenへようこそ。新鮮な野菜とヘルシーな料理をお届けします。"
+>
+  <Hero title="KEN GREEN" image="/images/hero.png" align="left" />
+  <!-- WHO IS HE? セクション -->
+  <div class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2
+        class="text-4xl font-bold text-green-800 mb-12 font-serif who-is-next-title"
+      >
+        WHO IS HE?
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <img
+            src="/images/1-88c9ca63.png"
+            alt="Ken Green"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+        <div>
+          <p class="mb-6 text-gray-700 leading-relaxed">
+            text text text text text text text text text text text text text
+            text text text text tex text text text text text text text text text
+            text text text text text text text text text text text text text
+            text text
+          </p>
+          <h3 class="text-4xl font-serif text-green-800 mt-8 who-is-next-title">
+            KEN GREEN
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ken's Life セクション -->
+  <div class="bg-[#FFFBEA] py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-8 gap-8">
+        <!-- What Shapes His Life -->
+        <div class="flex flex-col items-end justify-end h-full pr-4 mx-auto">
+          <h2
+            class="writing-vertical text-4xl font-serif text-green-800 w-full mx-auto"
+          >
+            What Shapes His Life
+          </h2>
+        </div>
+
+        <!-- Pat & Ken -->
+        <div class="lg:col-span-7 flex flex-col gap-8 mx-8">
+          <div class="flex items-end">
+            <img
+              src="/images/pat-ken.png"
+              alt="Pat and Ken"
+              class="w-full max-w-md mr-auto h-auto"
+            />
+            <div class="mt-8 text-center">
+              <a
+                href="/history"
+                class="text-3xl font-serif text-green-800 relative hover:no-underline group"
+              >
+                His History
+                <span
+                  class="absolute -bottom-1 left-0 w-0 h-1 bg-orange-300 group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+            </div>
+          </div>
+          <!-- His History -->
+          <div class="flex items-end">
+            <div class="text-center mb-8">
+              <a
+                href="/built-by-his-hands"
+                class="text-3xl font-serif text-green-800 relative hover:no-underline group"
+              >
+                Built by Hands
+                <span
+                  class="absolute -bottom-1 left-0 w-0 h-1 bg-orange-300 group-hover:w-full transition-all duration-300"
+                ></span>
+              </a>
+            </div>
+            <img
+              src="/images/1931-ford.png"
+              alt="1931 Ford"
+              class="w-full max-w-md ml-auto h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+<style>
+  .writing-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-align: right;
+  }
+</style>

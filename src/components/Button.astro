@@ -1,0 +1,31 @@
+---
+export interface Props {
+  text: string;
+  href?: string;
+  variant?: "primary" | "secondary" | "outline";
+  size?: "sm" | "md" | "lg";
+}
+
+const { text, href, variant = "primary", size = "md" } = Astro.props;
+
+const sizeClasses = {
+  sm: "py-2 px-4 text-sm",
+  md: "py-3 px-6 text-base",
+  lg: "py-4 px-8 text-lg",
+};
+
+const baseClasses = "btn";
+const variantClasses = `btn-${variant}`;
+const classes = `${baseClasses} ${variantClasses} ${sizeClasses[size]}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      {text}
+    </a>
+  ) : (
+    <button class={classes}>{text}</button>
+  )
+}
+

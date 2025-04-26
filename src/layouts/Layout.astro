@@ -1,22 +1,114 @@
+---
+import "../styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Green Kitchen",
+  description = "Green Kitchenへようこそ。新鮮な野菜とヘルシーな料理をお届けします。",
+} = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body class="flex flex-col min-h-screen bg-slate-50">
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <!-- 動物のフッター装飾 -->
+    <footer class="w-full bg-[#FFFBEA] pt-8 pb-0 relative mt-auto">
+      <div
+        class="container mx-auto px-4 text-center text-xs text-gray-500 mb-4"
+      >
+        © Ken Green All rights reserved.
+      </div>
+
+      <!-- 背景画像と動物たち -->
+      <div class="relative h-32 sm:h-40 w-full">
+        <!-- 草原の背景 -->
+        <img
+          src="/images/glass.png"
+          alt="草原の背景"
+          class="absolute bottom-0 left-0 w-full h-24 sm:h-28 object-cover"
+        />
+
+        <!-- 動物画像 -->
+        <div class="absolute bottom-0 left-0 right-0">
+          <div class="relative max-w-6xl mx-auto px-4">
+            <img
+              src="/images/mouse.png"
+              alt="mouse"
+              class="absolute bottom-1 left-[5%] w-12 sm:w-16 md:w-20 h-auto"
+            />
+            <img
+              src="/images/chito.png"
+              alt="chito"
+              class="absolute bottom-0 left-[22%] w-12 sm:w-16 md:w-20 h-auto"
+            />
+            <img
+              src="/images/happy.png"
+              alt="happy"
+              class="absolute bottom-0 right-[5%] w-20 sm:w-24 md:w-32 h-auto"
+            />
+            <img
+              src="/images/morris-dog.png"
+              alt="morris"
+              class="absolute bottom-0 left-[40%] w-16 sm:w-20 md:w-28 h-auto"
+            />
+            <img
+              src="/images/coby.png"
+              alt="coby"
+              class="absolute bottom-0 left-[40%] w-16 sm:w-20 md:w-28 h-auto"
+            />
+            <img
+              src="/images/charie.png"
+              alt="charie"
+              class="absolute bottom-0 left-[60%] w-16 sm:w-20 md:w-28 h-auto"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
 
+<script>
+  // ナビゲーションの現在のページをハイライト
+  document.addEventListener("DOMContentLoaded", () => {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll("header nav a");
+
+    navLinks.forEach((link) => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-primary", "font-medium");
+      }
+    });
+  });
+</script>
+
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

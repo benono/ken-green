@@ -1,0 +1,68 @@
+---
+export interface Props {
+  title: string;
+  subtitle?: string;
+  image?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  align?: "left" | "center" | "right";
+}
+
+const {
+  title,
+  subtitle,
+  image = "/images/hero-bg.jpg",
+  buttonText,
+  buttonLink = "/",
+  align = "center",
+} = Astro.props;
+
+// テキスト位置のクラスマッピング
+const alignClasses = {
+  left: "text-left items-start",
+  center: "text-center items-center",
+  right: "text-right items-end",
+};
+---
+
+<div class="bg-[#f5f5e9] min-h-screen">
+  <div class="py-4">
+    <div class="container mx-auto px-4">
+      <h1 class="text-2xl font-serif text-green-800">{title}</h1>
+    </div>
+  </div>
+
+  <div class="bg-[#f5f5e9] pb-12">
+    <div class="container mx-auto px-4">
+      <img
+        src={image}
+        alt={title}
+        class="w-full h-auto rounded-lg object-cover"
+      />
+    </div>
+  </div>
+
+  {
+    subtitle && (
+      <div class={`container mx-auto px-4 py-8 ${alignClasses[align]}`}>
+        <p class="text-xl opacity-90 leading-relaxed max-w-3xl">{subtitle}</p>
+
+        {buttonText && (
+          <div class="mt-8">
+            <a href={buttonLink} class="btn btn-primary">
+              {buttonText}
+            </a>
+          </div>
+        )}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  @media (max-width: 768px) {
+    div {
+      min-height: 400px;
+    }
+  }
+</style>
